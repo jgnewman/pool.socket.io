@@ -79,9 +79,9 @@ class Connection {
 /**
  * @class
  *
- * Models a pool of websocket connections.
+ * Creates an interface for managing connections at a high level.
  */
-class SocketPool {
+class ConnectionManager {
 
   /**
    * Builds the class instance. Also sets up a request handler on the
@@ -95,12 +95,6 @@ class SocketPool {
   constructor(server) {
     this.server = server;
     this.pool = io(server);
-    // server.on('request', function (req, res) {
-    //   if (req.url === '/socket.pool/socket.pool.js') {
-    //     res.writeHead(301, { Location: '/socket.io/socket.io.js' });
-    //     res.end();
-    //   }
-    // });
   }
 
   /**
@@ -154,6 +148,6 @@ class SocketPool {
  *
  * @return {SocketPool}
  */
-export default function socketPool(server) {
-  return new SocketPool(server);
+export default function socketpool(server) {
+  return new ConnectionManager(server);
 }
