@@ -5,12 +5,17 @@
   "license": "MIT",
   "main": "bin/socketpool.js",
   "author": "John Newman",
-  "homepage": "https://github.com/jgnewman/socket.pool#readme",
-  "bugs": "https://github.com/jgnewman/socket.pool/issues",
-  "keywords": [],
+  "homepage": "https://github.com/jgnewman/pool.socket.io#readme",
+  "bugs": "https://github.com/jgnewman/pool.socket.io/issues",
+  "keywords": [
+    "pool.socket.io",
+    "websocket",
+    "socket.io",
+    "socket"
+  ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jgnewman/socket.pool.git"
+    "url": "git+https://github.com/jgnewman/pool.socket.io.git"
   },
   "dependencies": {},
   "peerDependencies": {
