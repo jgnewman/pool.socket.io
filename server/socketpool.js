@@ -84,7 +84,9 @@ class Connection {
 class SocketPool {
 
   /**
-   * Builds the class instance.
+   * Builds the class instance. Also sets up a request handler on the
+   * provided server to send back the client version of the library when
+   * the client requests `/socket.pool/socket.pool.js`.
    *
    * @param  {Object} server An Express server instance.
    *
@@ -93,6 +95,12 @@ class SocketPool {
   constructor(server) {
     this.server = server;
     this.pool = io(server);
+    // server.on('request', function (req, res) {
+    //   if (req.url === '/socket.pool/socket.pool.js') {
+    //     res.writeHead(301, { Location: '/socket.io/socket.io.js' });
+    //     res.end();
+    //   }
+    // });
   }
 
   /**

@@ -1,5 +1,5 @@
 {
-  "name": "socket.pool",
+  "name": "pool.socket.io",
   "version": "0.0.1",
   "description": "Clearer, simpler semantics for socket.io",
   "license": "MIT",
