@@ -1,12 +1,12 @@
 import express from 'express';
 import http from 'http';
 import path from 'path';
-import socketPool from './socketpool';
+import socketpool from './socketpool';
 import config from '../gulpconfig';
 
 const app = express();
 const server = http.Server(app);
-const sp = socketPool(server);
+const connectionManager = socketpool(server);
 
 /*
  * Serve all assets files statically.
@@ -33,7 +33,7 @@ if (config.useBrowserHistory) {
 /*
  * Establish a websocket connection and log various events.
  */
-sp.onConnection((connection, pool) => {
+connectionManager.onConnection((connection, pool) => {
   console.log(`A client connected via websocket | ${connection.id}`);
 
   // connection.on('event-name', payload => {
